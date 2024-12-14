@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Football Academy</title>
+  <style>
+    /* تعيين الخطوط */
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #121212; /* لون خلفية داكن */
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+      text-align: center;
+    }
+
+    .container {
+      z-index: 1;
+      padding: 20px;
+      width: 80%;
+      max-width: 900px;
+    }
+
+    h1 {
+      font-size: 3em;
+      color: #b30000; /* الأحمر الداكن */
+      text-shadow: 3px 3px 15px rgba(0, 0, 0, 0.3);
+      margin-bottom: 20px;
+      transform: translateY(20px);
+      animation: moveUp 1s ease-out;
+    }
+
+    /* تأثير الحركة للعنوان */
+    @keyframes moveUp {
+      from {
+        transform: translateY(50px);
+      }
+      to {
+        transform: translateY(0);
+      }
+    }
+
+    /* زر الانضمام */
+    .button {
+      background: linear-gradient(45deg, #b30000, #333); /* الأحمر الداكن والأسود */
+      border: none;
+      border-radius: 12px;
+      padding: 20px 40px;
+      color: white;
+      font-size: 1.5em;
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5);
+      margin-top: 40px;
+      display: inline-block;
+    }
+
+    /* تأثير hover للزر */
+    .button:hover {
+      transform: translateY(-8px);
+      box-shadow: 0px 25px 30px rgba(0, 0, 0, 0.5);
+    }
+
+    /* قائمة التنقل */
+    .menu {
+      list-style-type: none;
+      padding: 0;
+      margin: 20px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .menu li {
+      margin: 10px;
+    }
+
+    .menu li a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 1.1em;
+      transition: transform 0.3s ease;
+    }
+
+    .menu li a:hover {
+      transform: scale(1.2);
+      color: #b30000;
+    }
+
+    /* قسم الأطقم */
+    .home-kit-section {
+      background-color: #222;
+      padding: 60px 20px;
+      text-align: center;
+      margin-top: 40px;
+      box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.5);
+      border-radius: 20px;
+      transform: translateY(20px);
+      animation: moveUp 1s ease-out;
+    }
+
+    .home-kit-section img {
+      width: 100%;
+      max-width: 600px;
+      border-radius: 15px;
+      box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    /* قسم المدربين */
+    .coaches-section {
+      background-color: #222;
+      padding: 60px 20px;
+      text-align: center;
+      margin-top: 60px;
+      box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.5);
+      border-radius: 20px;
+      transform: translateY(20px);
+      animation: moveUp 1s ease-out;
+    }
+
+    .coach {
+      display: inline-block;
+      margin: 20px;
+      width: 250px;
+      text-align: center;
+      transform: translateY(20px);
+      animation: moveUp 1s ease-out;
+    }
+
+    .coach img {
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    .coach-name {
+      font-size: 1.2em;
+      color: #b30000; /* اللون الأحمر الداكن */
+      margin-top: 10px;
+    }
+
+    .coach-title {
+      font-size: 1em;
+      color: #aaa;
+    }
+
+    /* Media Queries for Mobile and Small Screens */
+    @media (max-width: 1024px) {
+      h1 {
+        font-size: 2.5em;
+      }
+      .button {
+        padding: 15px 30px;
+        font-size: 1.2em;
+      }
+      .menu li a {
+        font-size: 1em;
+      }
+    }
+
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2.2em;
+      }
+      .button {
+        padding: 12px 25px;
+        font-size: 1em;
+      }
+      .menu li a {
+        font-size: 1em;
+      }
+      .home-kit-section img {
+        width: 90%;
+        max-width: 500px;
+      }
+      .coaches-section {
+        width: 90%;
+        padding: 40px 20px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 1.8em;
+      }
+      .button {
+        padding: 10px 20px;
+        font-size: 0.9em;
+      }
+      .menu {
+        flex-direction: column;
+      }
+      .menu li a {
+        font-size: 1em;
+      }
+      .home-kit-section img {
+        width: 90%;
+        max-width: 350px;
+      }
+      .coaches-section {
+        width: 95%;
+        padding: 20px;
+      }
+    }
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Welcome to Our Football Academy</h1>
+
+    <!-- زر الانضمام عبر WhatsApp -->
+    <a href="https://wa.me/96594113125" target="_blank">
+      <button class="button">Join Us Now</button>
+    </a>
+
+    <!-- قائمة التنقل -->
+    <ul class="menu">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Programs</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </div>
+
+  <!-- قسم الأطقم -->
+  <div class="home-kit-section">
+    <h2>Our Home Kit</h2>
+    <img src="https://scontent.xx.fbcdn.net/v/t1.15752-9/462555117_493418103626124_4309187581857488348_n.jpg?stp=dst-jpg_s480x480_tt6&_nc_cat=101&ccb=1-7&_nc_sid=0024fc&_nc_ohc=s_FdD1IR5aIQ7kNvgEaxNX2&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.xx&oh=03_Q7cD1QGRKUzZtlKOSP3CJ0GGD4vT34DJsRguALs5ydEiRFOhjg&oe=6784E187" alt="Home Kit" />
+    <p>Check out the stylish and professional kit we use for all our matches.</p>
+  </div>
+
+  <!-- قسم المدربين -->
+  <div class="coaches-section">
+    <h2>Our Coaches</h2>
+    <div class="coach">
+      <img src="https://scontent.xx.fbcdn.net/v/t1.15752-9/462557784_943747533753606_3769225461377127945_n.jpg?stp=dst-jpg_s526x395_tt6&_nc_cat=109&ccb=1-7&_nc_sid=0024fc&_nc_ohc=K1QcGpHUWnQQ7kNvgE0KxOf&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.xx&oh=03_Q7cD1QFr7ZdPHGhOdbauo7wV01xKY2kwB9ePobYAWwEB1Jsp7g&oe=6784FEF3" alt="Goalkeeper Coach">
+      <p class="coach-name">Mohammed Hamdi</p>
+      <p class="coach-title">Goalkeeper Coach</p>
+    </div>
+    <div class="coach">
+      <img src="https://scontent.xx.fbcdn.net/v/t1.15752-9/462563571_1322384032109206_4296352906534578596_n.jpg?stp=dst-jpg_s552x414_tt6&_nc_cat=109&ccb=1-7&_nc_sid=0024fc&_nc_ohc=-b_G3WJNJ0wQ7kNvgGXB9mG&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.xx&oh=03_Q7cD1QFOgd6O60l2ncKyRrokXNelrDQC0e3BcSn00NCQNf6wIw&oe=67850980" alt="Football Coach">
+      <p class="coach-name">Mohammed AL-Sayed</p>
+      <p class="coach-title">Football Coach</p>
+    </div>
+  </div>
+</body>
+</html>
